@@ -28,7 +28,7 @@
     Here is the outline: 
 </p>
 
-<ul>
+<ul data-sveltekit-preload-data>
     <li><a href="/ch1">Basic Visualization</a></li>
     <li><a href="/ch2">Data Visualization with Svelte</a></li>
 </ul>
