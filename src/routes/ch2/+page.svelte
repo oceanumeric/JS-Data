@@ -13,6 +13,11 @@
         }
     })
 
+    const rescale = function(x, domain_min, domain_max, range_min, range_max) {
+      return ((range_max - range_min)*(x-domain_min))/(domain_max-domain_min) + range_min
+    }
+
+
     let code = `
 // JS code
 let dataPoints = Array.from({length: 10}, () => {
@@ -29,6 +34,27 @@ let dataPoints = Array.from({length: 10}, () => {
     {/each}
 </svg>
 `
+
+    let codefoo = `// JS code on +page.server.ts
+import type { PageServerLoad } from './$types';
+export const load:PageServerLoad = (async () => {
+    // fetch data from https://vda-lab.gitlab.io/datavis-technologies/assets/flights_part.json
+    // and return it
+
+    const response = await fetch('https://vda-lab.gitlab.io/datavis-technologies/assets/flights_part.json');
+    // convert the response to json
+    const data = await response.json();
+    return {flights: data};
+});
+
+// Svelte code
+<svg width="800" height="400">
+    {#each data.flights as datapoint}
+        <circle cx={rescale(datapoint.from_long, -180, 180, 0, 800)}
+                cy={rescale(datapoint.from_lat, -90, 90, 400, 0)}
+                r=3 />
+    {/each}
+</svg>`
 </script>
 
 
@@ -43,7 +69,7 @@ let dataPoints = Array.from({length: 10}, () => {
 <svg width="300" height="160">
     {#each dataPoints as dataPoint}
         <circle cx={dataPoint.x} cy={dataPoint.y} r="7"
-        fill="#25A0A9" fill-opacity="0.7"/>
+        fill="#25A0A9" fill-opacity="0.8"/>
     {/each}
 </svg>
 
@@ -62,4 +88,30 @@ showHeader={false} showLineNumbers={false}
     render data. As you can see, we save lots of time by using
     the Svelte syntax to render the data with each loop.
 </p>
+
+
+<svg width="800" height="400">
+    {#each data.flights as datapoint}
+        <circle cx={rescale(datapoint.from_long, -180, 180, 0, 800)}
+                cy={rescale(datapoint.from_lat, -90, 90, 400, 0)}
+                r=3 />
+    {/each}
+</svg>
+
+<p>
+Use the same technique, we can render the data on a map.
+</p>
+
+
+<style>
+    svg {
+        border: 1px;
+        border-style: solid;
+    }
+    circle {
+        fill: steelblue;
+        fill-opacity: 0.5;
+    }
+</style>
+
 
