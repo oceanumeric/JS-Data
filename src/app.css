@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+h1 {
+    @apply text-4xl;
+    @apply mb-7;
+}
+
+h2 {
+    @apply text-2xl;
+    @apply mb-3;
+}
+
+a {
+    @apply text-blue-500;
+}
+
+p {
+    @apply mt-3;
+    font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+    font-size:19px;
+}
+
+ul {
+    @apply my-3;
+    @apply px-7;
+    font-size: 17px;
+    font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+}
+
+
+ul li::before {
+    content: "\2022"; /* Unicode character for a bullet point */
+    color: black; /* Tailwind color for blue-500 */
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+svg {
+    @apply mx-auto;
+    @apply my-2;
+}
