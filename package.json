@@ -34,10 +34,14 @@
 	"dependencies": {
 		"@types/d3": "^7.4.3",
 		"d3": "^7.8.5",
+		"d3-array": "^3.2.4",
+		"d3-scale": "^4.0.2",
 		"gridjs": "^6.0.6",
 		"gridjs-svelte": "^2.1.1",
 		"highlight.js": "^11.9.0",
 		"layercake": "^8.0.2",
+		"papaparse": "^5.4.1",
+		"regl-scatterplot": "^1.8.5",
 		"svhighlight": "^0.7.1",
 		"vega-embed": "^6.23.0"
 	}

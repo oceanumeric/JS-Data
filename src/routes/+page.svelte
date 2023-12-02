@@ -32,5 +32,6 @@
     <li><a href="/ch1">Basic Visualization</a></li>
     <li><a href="/ch2">Data Visualization with Svelte</a></li>
     <li><a href="/ch3">Data Visualization with Vega-Lite</a></li>
+    <li><a href="/ch4">Data Visualization with regl-scatterplot</a></li>
 </ul>
 
