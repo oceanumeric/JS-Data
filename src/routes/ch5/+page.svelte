@@ -45,6 +45,7 @@
             count: 3
             });
         
+        regl.clear({color:[0,1,1,1]})
         drawTriangle();
     });
 
