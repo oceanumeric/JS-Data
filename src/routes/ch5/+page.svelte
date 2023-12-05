@@ -1,24 +1,19 @@
 <script lang="ts">
-    import * as createREGL from 'regl';
+    import createREGL from "regl";
     import { onMount } from "svelte";
     import type { PageData } from './$types';
 
     export let data: PageData;
 
-    const width = 800;
+    const width = 600;
     const height = 400;
 
     let canvas: HTMLCanvasElement;
     let drawTriangle: any;
     let regl: any;
 
-
-
     onMount(() => {
-        regl = createREGL({
-            canvas: canvas
-        });
-
+        regl = createREGL(canvas);
         drawTriangle = regl({
             // fragment shader
             frag: `
