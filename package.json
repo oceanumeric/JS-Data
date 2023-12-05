@@ -17,6 +17,8 @@
 		"@typescript-eslint/eslint-plugin": "^6.0.0",
 		"@typescript-eslint/parser": "^6.0.0",
 		"autoprefixer": "^10.4.16",
+		"browserify": "^17.0.0",
+		"budo": "^11.8.4",
 		"eslint": "^8.28.0",
 		"eslint-config-prettier": "^9.0.0",
 		"eslint-plugin-svelte": "^2.30.0",
@@ -41,7 +43,9 @@
 		"highlight.js": "^11.9.0",
 		"layercake": "^8.0.2",
 		"papaparse": "^5.4.1",
+		"regl": "^2.1.0",
 		"regl-scatterplot": "^1.8.5",
+		"svelte-canvas": "^1.0.2",
 		"svhighlight": "^0.7.1",
 		"vega-embed": "^6.23.0"
 	}
