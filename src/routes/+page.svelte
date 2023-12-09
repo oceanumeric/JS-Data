@@ -34,5 +34,6 @@
     <li><a href="/ch3">Data Visualization with Vega-Lite</a></li>
     <li><a href="/ch4">Data Visualization with regl-scatterplot</a></li>
     <li><a href="/ch5">Data Visualization with regl</a></li>
+    <li><a href="/ch6">Introduction to regl</a></li>
 </ul>
 
