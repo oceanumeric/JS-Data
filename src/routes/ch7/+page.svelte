@@ -8,22 +8,30 @@
     export let data: PageData;
 
     // initial value
-    const circle = tweened({ cx: -300, fill: '#D34052' }, {
+    const foo = tweened({ cx: -300, fill: '#D34052' }, {
 		duration: 2000,
         easing: cubicInOut,
         interpolate,
 	})
+
+    const foo2 = tweened({ cx: 0, fill: '#D34052' }, {
+        duration: 2000,
+        easing: cubicInOut,
+        interpolate,
+    })
+
+    foo2.set({ cx: 300, fill: '#e13238' })
 
 
     // update value on mount
     onMount(async () => {
         async function animateCircle() {
         // Update to the new state (move to the right and change fill color)
-        await circle.update(prev => ({ ...prev, cx: 300, fill: '#e13238' }));
+        await foo.update(prev => ({ ...prev, cx: 300, fill: '#e13238' }));
         // Wait for a short duration (you can adjust this as needed)
         await new Promise(resolve => setTimeout(resolve, 500));
         // Update back to the original state (move to the left)
-        await circle.update(prev => ({ ...prev, cx: -300 }));
+        await foo.update(prev => ({ ...prev, cx: -300, fill: '#409A9A' }));
         // Call the function recursively to create a loop
         animateCircle();
     }
@@ -45,7 +53,8 @@
 
 
 <svg width="100%" height="100%" viewBox="-300 -300 800 600">
-	<circle cx={$circle.cx} cy={0} r={40} fill={$circle.fill} />
+	<circle cx={$foo.cx} cy={0} r={40} fill={$foo.fill} />
+    <circle cx={$foo2.cx} cy={0} r={40} fill={$foo2.fill} />
 </svg>
 
 
