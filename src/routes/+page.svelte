@@ -35,5 +35,6 @@
     <li><a href="/ch4">Data Visualization with regl-scatterplot</a></li>
     <li><a href="/ch5">Data Visualization with regl</a></li>
     <li><a href="/ch6">Introduction to regl</a></li>
+    <li><a href="/ch7">SVG Animation</a></li>
 </ul>
 
